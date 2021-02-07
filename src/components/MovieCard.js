@@ -4,15 +4,21 @@ import {
     CardTitle, CardSubtitle, Button
 } from 'reactstrap';
 
+
 const MovieCard = ({ movie }) => {
     return (
         <Card className="mt-2">
-            <CardImg top width="100%" src="/assets/318x180.svg" alt="Card image cap" />
+            <CardImg top width="100%" src={`http://image.tmdb.org/t/p/w500${movie.poster_path}`} alt="Card image cap" />
             <CardBody>
                 <CardTitle tag="h5">{movie.title}</CardTitle>
-                <CardSubtitle tag="h6" className="mb-2 text-muted">Vote Count : {movie.vote_count}</CardSubtitle>
-                <CardText>Some quick example text to build on the card title and make up the bulk of the card's content.</CardText>
-                <Button>Button</Button>
+                <CardSubtitle tag="h6" className="mb-2 text-muted">
+                    <div>
+                        Vote Count : {movie.vote_count}
+                    </div>
+                    <div>
+                        Popularity : {movie.popularity}
+                    </div>
+                </CardSubtitle>
             </CardBody>
         </Card>
     )

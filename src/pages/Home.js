@@ -16,6 +16,7 @@ const Home = () => {
 
     const getTrendingMovies = async () => {
         const res = await axios.get(`${BASE_URL}/trending/movie/week`, { params: { api_key: API_KEY } })
+
         setTrendings(res.data.results)
     }
 
@@ -49,7 +50,7 @@ const Home = () => {
                 <div className="row">
                     {
                         trendings.map(movie => {
-                            return <div className="col-md-4"><MovieCard movie={movie} /></div>
+                            return <div className="col-md-2"><MovieCard movie={movie} /></div>
                         })
                     }
                 </div>
