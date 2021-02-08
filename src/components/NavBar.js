@@ -27,7 +27,9 @@ const NavBar = (props) => {
                                 <NavLink>Movies</NavLink>
                             </NavItem>
                         </Nav>
-                        <NavbarText>Simple Text</NavbarText>
+                        <NavItem>
+                            <NavLink>APIS USED</NavLink>
+                        </NavItem>
                     </Collapse>
                 </div>
             </Navbar>

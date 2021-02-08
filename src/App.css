@@ -42,3 +42,7 @@
   height:100%;
 
 }
+
+.image_card{
+  position: relative;
+}

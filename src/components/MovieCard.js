@@ -1,14 +1,15 @@
 import React from 'react'
 import {
     Card, CardImg, CardText, CardBody,
-    CardTitle, CardSubtitle, Button
+    CardTitle, CardSubtitle, Badge
 } from 'reactstrap';
+import { IMAGE_BASE_URL } from '../config'
 
 
 const MovieCard = ({ movie }) => {
     return (
         <Card className="mt-2">
-            <CardImg top width="100%" src={`http://image.tmdb.org/t/p/w500${movie.poster_path}`} alt="Card image cap" />
+            <CardImg top width="100%" src={`${IMAGE_BASE_URL}${movie.poster_path}`} alt="Card image cap" />
             <CardBody>
                 <CardTitle tag="h5">{movie.title}</CardTitle>
                 <CardSubtitle tag="h6" className="mb-2 text-muted">
@@ -18,6 +19,11 @@ const MovieCard = ({ movie }) => {
                     <div>
                         Popularity : {movie.popularity}
                     </div>
+                    <div className="movie-class">
+                        {movie.adult ? <Badge color="info">Adult</Badge> : <Badge color="danger p-1">HD</Badge>}
+                    </div>
+
+
                 </CardSubtitle>
             </CardBody>
         </Card>

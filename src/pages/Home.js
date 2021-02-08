@@ -8,10 +8,12 @@ const Home = () => {
 
     const [trendings, setTrendings] = React.useState([])
     const [playingNow, setPlayingNow] = React.useState([])
+    const [topRated, setTopRated] = React.useState([])
 
     React.useEffect(() => {
         getTrendingMovies();
         getPlayingNowMovies();
+        getTopRated()
     }, [])
 
     const getTrendingMovies = async () => {
@@ -25,6 +27,12 @@ const Home = () => {
             setPlayingNow(res.data.results.splice(0, 6));
         }).catch(err => {
             console.log(err)
+        })
+    }
+
+    const getTopRated = () => {
+        axios.get(`${BASE_URL}/movie/top_rated`, { params: { api_key: API_KEY } }).then(res => {
+            setTopRated(res.data.results)
         })
     }
 
@@ -50,6 +58,16 @@ const Home = () => {
                 <div className="row">
                     {
                         trendings.map(movie => {
+                            return <div className="col-md-2"><MovieCard movie={movie} /></div>
+                        })
+                    }
+                </div>
+                <div className="mt-2 text-light card bg-info p-2">
+                    <h3>Top Rated</h3>
+                </div>
+                <div className="row">
+                    {
+                        topRated.map(movie => {
                             return <div className="col-md-2"><MovieCard movie={movie} /></div>
                         })
                     }
