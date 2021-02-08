@@ -3,6 +3,7 @@ import './App.css'
 import { BrowserRouter, Route, Switch } from 'react-router-dom'
 import Home from './pages/Home'
 import NavBar from './components/NavBar'
+import ApiUsed from "./pages/ApisUsed";
 
 function App() {
   return (
@@ -11,7 +12,8 @@ function App() {
       <NavBar />
       <div className="container-fluid">
         <Switch>
-          <Route exact path="/" component={Home} />
+          <Route exact path="/movie" component={Home} />
+          <Route exact path="/apiused" component={ApiUsed} />
         </Switch>
       </div>
 
