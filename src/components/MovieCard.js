@@ -1,6 +1,6 @@
 import React from 'react'
 import {
-    Card, CardImg, CardText, CardBody,
+    Card, CardImg, CardBody,
     CardTitle, CardSubtitle, Badge
 } from 'reactstrap';
 import { IMAGE_BASE_URL } from '../config'

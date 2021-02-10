@@ -3,7 +3,7 @@ import axios from 'axios'
 import { BASE_URL, API_KEY } from '../config'
 import MovieCard from '../components/MovieCard'
 import ImageCarousel from '../components/Carousel'
-import { BrowserRouter, Switch, Route } from 'react-router-dom'
+
 
 const Home = () => {
 
